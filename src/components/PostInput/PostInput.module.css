@@ -1,0 +1,114 @@
+.composer {
+  background: #fff;
+  border-radius: 18px;
+  border: 1.5px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 1.1rem 1.3rem 1.1rem 1.3rem;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 0.7rem 1.1rem;
+  background: #f7f8fa;
+  margin-bottom: 0.1rem;
+  position: relative;
+  border: none;
+  transition: box-shadow 0.2s;
+  display: flex;
+  align-items: start;
+}
+.inputRow:focus-within {
+  box-shadow: 0 0 0 2px #635bff33;
+}
+
+.emojiIcon {
+  width: 28px;
+  height: 28px;
+  margin-right: 0.7rem;
+  cursor: pointer;
+  transition: transform 0.18s;
+  margin-top: 0.2rem;
+}
+.emojiIcon:hover {
+  transform: scale(1.15) rotate(-8deg);
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1.25rem;
+  background: transparent;
+  color: #888;
+  font-weight: 500;
+  padding: 0.2rem 0;
+  transition: color 0.2s;
+  min-height: 1.5em;
+  max-height: 7.5em;
+  resize: none;
+  line-height: 1.5;
+}
+.input:focus {
+  color: #222;
+}
+
+.footerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.1rem;
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footerBtn {
+  background: none;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 0.18s, transform 0.18s;
+}
+.footerBtn:hover {
+  background: #f3f4f6;
+  transform: scale(1.1);
+}
+
+.publishBtn {
+  background: #fff;
+  border: 3px solid #635bff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.7rem;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, transform 0.18s;
+  box-shadow: 0 2px 8px rgba(99,91,255,0.08);
+}
+.publishBtn:hover {
+  background: #f5f3ff;
+  border-color: #4f46e5;
+  transform: scale(1.08) translateY(-2px);
+}
+
+.publishBtn img {
+  width: 22px;
+  height: 22px;
+  filter: invert(38%) sepia(98%) saturate(7492%) hue-rotate(235deg) brightness(99%) contrast(101%);
+} 

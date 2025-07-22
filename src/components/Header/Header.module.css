@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header__icon {
+  width: 40px;
+  height: 40px;
+}
+
+.header__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header__login {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  margin-right: 0.25rem;
+}
+
+.header__logout {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
