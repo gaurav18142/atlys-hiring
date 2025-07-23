@@ -34,7 +34,7 @@ function Home() {
 
   return (
     <>
-        <Header handleLoginClick={handleLoginClick} />
+        <Header />
         <div className={styles.homeContainer}>
             <PostInput handleLoginClick={handleLoginClick} />
             <PostList />

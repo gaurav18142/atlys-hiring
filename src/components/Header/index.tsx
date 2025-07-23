@@ -3,11 +3,17 @@ import icon from '../../assets/icon.svg';
 import logout from '../../assets/logout.svg';
 import login from '../../assets/login.svg';
 import { useAuth } from '../../context/AuthContext';
-import type { HeaderProps } from '../../types/Home';
+import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ROUTES } from '../../constants/common-constants';
 
-function Header(props: HeaderProps) {
+function Header() {
 
-    const { handleLoginClick } = props;
+    const navigate = useNavigate();
+
+    const handleLoginClick = useCallback(() => {
+        navigate(ROUTES.SIGN_IN);
+    }, []);
 
     const { isAuthenticated, logout: doLogout } = useAuth();
 
