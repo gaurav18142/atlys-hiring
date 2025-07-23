@@ -13,7 +13,7 @@ function Header() {
 
     const handleLoginClick = useCallback(() => {
         navigate(ROUTES.SIGN_IN);
-    }, []);
+    }, [navigate]);
 
     const { isAuthenticated, logout: doLogout } = useAuth();
 
