@@ -14,9 +14,7 @@ export function setPostsInStorage(posts: any) {
 export function timeAgo(isoTimestamp: string) {
   const now = new Date();
   const past = new Date(isoTimestamp);
-  const diffInSeconds = Math.floor((now - past) / 1000);
-
-  const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+  const diffInSeconds = Math.floor((now.getTime() - past.getTime()) / 1000);
 
   const intervals = [
     { unit: 'year', seconds: 31536000 },
@@ -31,9 +29,8 @@ export function timeAgo(isoTimestamp: string) {
   for (const interval of intervals) {
     const count = Math.floor(diffInSeconds / interval.seconds);
     if (count >= 1) {
-      return rtf.format(-count, interval.unit);
+      return `${count} ${interval.unit}(s) ago`;
     }
   }
-
   return 'just now';
 }
