@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './SignUpForm.module.css';
 import { useAuth } from '../../context/AuthContext';
 import { addUser } from '../../utils/auth';
 import { ROUTES } from '../../constants/common-constants';
+import type { SignUpFormProps } from '../../types/Home';
 
-function SignUpForm() {
+function SignUpForm(props: SignUpFormProps) {
+
+  const { onSignInClick } = props;
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -72,7 +76,7 @@ function SignUpForm() {
       {error && <p className={styles.error}>{error}</p>}
       <button type="submit" className={styles.button}>Sign Up</button>
       <p className={styles.signInLink}>
-        Already have an account? <Link to={ROUTES.SIGN_IN}>Sign in</Link>
+        Already have an account? <span onClick={onSignInClick} className={styles.signIn}>Sign in</span>
       </p>
     </form>
   );

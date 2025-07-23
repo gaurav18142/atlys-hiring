@@ -3,7 +3,6 @@ import icon from '../../assets/icon.svg';
 import logout from '../../assets/logout.svg';
 import login from '../../assets/login.svg';
 import { useAuth } from '../../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
 import type { HeaderProps } from '../../types/Home';
 
 function Header(props: HeaderProps) {
@@ -11,11 +10,9 @@ function Header(props: HeaderProps) {
     const { handleLoginClick } = props;
 
     const { isAuthenticated, logout: doLogout } = useAuth();
-    const navigate = useNavigate();
 
     const handleLogoutClick = () => {
       doLogout();
-      navigate('/sign-in');
     };
 
     return (

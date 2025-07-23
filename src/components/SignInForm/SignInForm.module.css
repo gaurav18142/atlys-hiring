@@ -59,11 +59,12 @@
   margin-top: 1rem;
 }
 
-.signupLink a {
+.signUp {
   color: #1976d2;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.signupLink a:hover {
+.signUp:hover {
   text-decoration: underline;
-} 
+}
