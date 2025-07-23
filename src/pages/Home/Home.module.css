@@ -1,5 +1,7 @@
-.heading {
-  color: #f5a623;
-  text-align: center;
-  margin-top: 2rem;
-} 
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}

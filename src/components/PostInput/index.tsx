@@ -5,19 +5,38 @@ import add from '../../assets/add.svg';
 import audio from '../../assets/audio.svg';
 import video from '../../assets/video.svg';
 import publish from '../../assets/publish.svg';
-import { notImplementedAlert } from '../../utils/notImplementedAlert';
+import { notImplementedAlert } from '../../utils/home-utils';
 import PostToolbar from '../PostToolbar';
+import { usePosts } from '../../context/PostsContext';
+import { useAuth } from '../../context/AuthContext';
+import type { PostInputProps } from '../../types/Home';
 
-const PostInput: React.FC = () => {
+const PostInput: React.FC<PostInputProps> = (props: PostInputProps) => {
+
+  const { handleLoginClick } = props;
+
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-
-  };
+  const { addPost } = usePosts();
+  const { user, isAuthenticated } = useAuth();
 
   const onPublish = useCallback(() => {
-    console.log('publish');
-  }, []);
+    if (isAuthenticated) {
+
+      const { name } = user || {};
+
+      addPost({
+        name: name || '',
+        text: textareaRef.current?.value || '',
+        timestamp: new Date().toISOString(),
+      })
+      if (textareaRef.current) {
+        textareaRef.current.value = '';
+      }
+    } else {
+      handleLoginClick();
+    }
+  }, [isAuthenticated, user]);
 
   return (
     <div className={styles.composer}>
@@ -29,7 +48,6 @@ const PostInput: React.FC = () => {
           className={styles.input}
           placeholder="How are you feeling today?"
           rows={5}
-          onInput={handleInput}
           style={{overflow:'hidden'}}
         />
       </div>

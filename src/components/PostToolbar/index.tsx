@@ -1,5 +1,5 @@
 import styles from './PostToolbar.module.css'
-import { notImplementedAlert } from '../../utils/notImplementedAlert'
+import { notImplementedAlert } from '../../utils/home-utils'
 import bold from '../../assets/bold.svg'
 import italic from '../../assets/italic.svg'
 import underline from '../../assets/underline.svg'

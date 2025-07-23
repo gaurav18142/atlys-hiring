@@ -1,3 +1,12 @@
 export interface HeaderProps {
-    children: React.ReactNode;
+    handleLoginClick: () => void;
 }
+
+export interface PostData {
+    name: string;
+    timestamp: string;
+    text: string;
+  }
+  export interface PostInputProps {
+    handleLoginClick: () => void;
+  }

@@ -1,33 +1,22 @@
 import styles from './Header.module.css'
-import type { HeaderProps } from '../../types/Home';
 import icon from '../../assets/icon.svg';
 import logout from '../../assets/logout.svg';
 import login from '../../assets/login.svg';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import SignInForm from '../SignInForm';
-import Modal from '../Modal';
+import type { HeaderProps } from '../../types/Home';
 
 function Header(props: HeaderProps) {
-    const { children } = props;
+
+    const { handleLoginClick } = props;
+
     const { isAuthenticated, logout: doLogout } = useAuth();
     const navigate = useNavigate();
-    const [modalOpen, setModalOpen] = useState(false);
 
-    const handleLoginClick = () => {
-      setModalOpen(true);
-    };
     const handleLogoutClick = () => {
       doLogout();
       navigate('/sign-in');
     };
-
-    useEffect(() => {
-      if (isAuthenticated) {
-        setModalOpen(false);
-      }
-    }, [isAuthenticated]);
 
     return (
       <>
@@ -52,13 +41,7 @@ function Header(props: HeaderProps) {
               style={{ cursor: 'pointer' }}
             />
           </div>
-          {modalOpen && (
-            <Modal onClose={() => setModalOpen(false)}>
-              <SignInForm />
-            </Modal>
-          )}
         </header>
-        {children}
       </>
     );
 }

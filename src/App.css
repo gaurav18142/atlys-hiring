@@ -3,3 +3,6 @@
 html, body {
   font-family: 'Atkinson Hyperlegible', Arial, Helvetica, sans-serif;
 }
+p {
+  margin: 0;
+}
